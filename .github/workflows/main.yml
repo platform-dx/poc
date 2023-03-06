@@ -1,5 +1,6 @@
 name: Deploy
-push:
+on:
+  push:
     branches: [ "main" ]
 
 jobs:
