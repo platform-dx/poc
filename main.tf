@@ -59,7 +59,11 @@ resource "aws_dynamodb_table" "lucianotable" {
     type = "S"
   }
   hash_key = "noteId"
+}
 
+resource "aws_s3_bucket" "mybucket" {
+  bucket = "kdianadakjkafa"
+  acl    = "private"
 }
 
 output "my_output_arn" {
