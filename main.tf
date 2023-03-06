@@ -1,8 +1,30 @@
+
+terraform {
+  backend "s3" {
+    bucket = "poc-samuel"
+    key    = "poc-samuel.tfstate"
+    region = "us-east-1"
+  }
+}
+
 resource "aws_dynamodb_table" "basic-dynamodb-table" {
   name           = "GameScores"
   billing_mode   = "PROVISIONED"
-  read_capacity  = 20
-  write_capacity = 55
+  read_capacity  = 5
+  write_capacity = 5
+  attribute {
+    name = "noteId"
+    type = "S"
+  }
+  hash_key = "noteId"
+
+}
+
+resource "aws_dynamodb_table" "othertable" {
+  name           = "newtable"
+  billing_mode   = "PROVISIONED"
+  read_capacity  = 5
+  write_capacity = 5
   attribute {
     name = "noteId"
     type = "S"
