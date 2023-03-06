@@ -1,10 +1,13 @@
-
 terraform {
   backend "s3" {
     bucket = "poc-samuel"
     key    = "poc-samuel.tfstate"
-    region = "us-east-1"
+    region = "us-east-1"  
   }
+}
+
+provider "aws" {
+  region = "us-east-1"
 }
 
 resource "aws_dynamodb_table" "basic-dynamodb-table" {
