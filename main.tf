@@ -23,7 +23,7 @@ resource "aws_dynamodb_table" "basic-dynamodb-table" {
 }
 
 resource "aws_dynamodb_table" "basic-dynamodb-table2" {
-  name           = "GameScores"
+  name           = "GameScores2"
   billing_mode   = "PROVISIONED"
   read_capacity  = 5
   write_capacity = 5
